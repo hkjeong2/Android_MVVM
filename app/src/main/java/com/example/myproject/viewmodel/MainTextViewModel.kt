@@ -1,19 +1,17 @@
 package com.example.myproject.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myproject.model.NumberData
+import com.example.myproject.model.Repository
 
-class MainTextViewModel : ViewModel() {
+class MainTextViewModel(private val repository: Repository) : ViewModel() {
 
     private var _num = MutableLiveData<Int>()
     val num : LiveData<Int> get() = _num
 
     init{
-        val numberData = NumberData()
-        _num.value = numberData.number
+        _num.value = repository.loadData()
     }
 
     fun clickResetNum(){
@@ -26,6 +24,10 @@ class MainTextViewModel : ViewModel() {
 
     fun clickMinusNum(){
         minusNum()
+    }
+
+    fun clickSaveNum(){
+        saveNum()
     }
 
     private fun resetNum() {
@@ -42,6 +44,10 @@ class MainTextViewModel : ViewModel() {
         if (_num.value!! > 0){
             _num.value = _num.value!! - 1
         }
+    }
+
+    private fun saveNum(){
+        repository.saveData(_num.value!!)
     }
 
 }

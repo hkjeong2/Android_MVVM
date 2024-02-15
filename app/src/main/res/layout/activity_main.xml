@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/get_bt"
+            android:id="@+id/reset_bt"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginTop="20dp"
@@ -38,23 +38,34 @@
             android:id="@+id/add_bt"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginTop="20dp"
             android:text="+"
             android:onClick="@{()->viewmodel.clickAddNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
+            app:layout_constraintTop_toTopOf="@id/reset_bt"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/get_bt"/>
+            app:layout_constraintBottom_toBottomOf="@id/save_bt"
+            app:layout_constraintStart_toEndOf="@id/reset_bt"/>
 
         <Button
             android:id="@+id/minus_bt"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginTop="20dp"
             android:text="-"
             android:onClick="@{()->viewmodel.clickMinusNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
+            app:layout_constraintTop_toTopOf="@id/reset_bt"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/get_bt"/>
+            app:layout_constraintBottom_toBottomOf="@id/save_bt"
+            app:layout_constraintEnd_toStartOf="@id/reset_bt"/>
+
+        <Button
+            android:id="@+id/save_bt"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:text="저장하기"
+            android:onClick="@{()->viewmodel.clickSaveNum()}"
+            app:layout_constraintTop_toBottomOf="@id/reset_bt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 
 

@@ -10,8 +10,6 @@ import com.example.myproject.adapter.StockItemRVAdapter
 import com.example.myproject.databinding.ActivityMainBinding
 import com.example.myproject.viewmodel.StockItemListViewModel
 
-//import com.example.myproject.viewmodel.StockItemViewModel
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
@@ -24,14 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         stockItemListViewModel = ViewModelProvider(this)[StockItemListViewModel::class.java]
         binding.viewmodel = stockItemListViewModel
-        binding.lifecycleOwner = this
+//        binding.lifecycleOwner = this
 
         myAdapter = StockItemRVAdapter(this, stockItemListViewModel.stockList.value!!)
         binding.stockRv.adapter = myAdapter
         binding.stockRv.layoutManager = LinearLayoutManager(this)
-
-
-
 
 
 

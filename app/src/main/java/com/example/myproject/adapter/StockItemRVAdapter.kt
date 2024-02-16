@@ -18,17 +18,19 @@ class StockItemRVAdapter(private val owner : LifecycleOwner, private val stockLi
     class MyViewHolder(private val owner : LifecycleOwner, private val binding : StockitemItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(stock : StockItemViewModel){
             binding.stock = stock
-            stock.name.observe(owner, Observer{
-                binding.titleTv.text = it
-            })
+            binding.lifecycleOwner = owner
 
-            stock.price.observe(owner, Observer{
-                binding.priceTv.text = it.toString()
-            })
-
-            stock.number.observe(owner, Observer{
-                binding.numberTv.text = it.toString()
-            })
+//            stock.name.observe(owner, Observer{
+//                binding.titleTv.text = it
+//            })
+//
+//            stock.price.observe(owner, Observer{
+//                binding.priceTv.text = it.toString()
+//            })
+//
+//            stock.number.observe(owner, Observer{
+//                binding.numberTv.text = it.toString()
+//            })
         }
     }
 

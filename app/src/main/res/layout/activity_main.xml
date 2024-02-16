@@ -5,69 +5,37 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.myproject.viewmodel.MainTextViewModel" />
+            type="com.example.myproject.viewmodel.StockItemListViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title_cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/number_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="100sp"
-            android:text="@{String.valueOf(viewmodel.num)}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="종목 리스트"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/reset_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:text="숫자 리셋"
-            android:onClick="@{()->viewmodel.clickResetNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stock_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/add_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:text="+"
-            android:onClick="@{()->viewmodel.clickAddNum()}"
-            app:layout_constraintTop_toTopOf="@id/reset_bt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/save_bt"
-            app:layout_constraintStart_toEndOf="@id/reset_bt"/>
+            </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/minus_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:text="-"
-            android:onClick="@{()->viewmodel.clickMinusNum()}"
-            app:layout_constraintTop_toTopOf="@id/reset_bt"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/save_bt"
-            app:layout_constraintEnd_toStartOf="@id/reset_bt"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/save_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:text="저장하기"
-            android:onClick="@{()->viewmodel.clickSaveNum()}"
-            app:layout_constraintTop_toBottomOf="@id/reset_bt"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

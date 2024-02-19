@@ -20,17 +20,17 @@ class StockItemRVAdapter(private val owner : LifecycleOwner, private val stockLi
             binding.stock = stock
             binding.lifecycleOwner = owner
 
-//            stock.name.observe(owner, Observer{
-//                binding.titleTv.text = it
-//            })
-//
-//            stock.price.observe(owner, Observer{
-//                binding.priceTv.text = it.toString()
-//            })
-//
-//            stock.number.observe(owner, Observer{
-//                binding.numberTv.text = it.toString()
-//            })
+            stock.name.observe(owner, Observer{
+                binding.titleTv.text = it
+            })
+
+            stock.price.observe(owner, Observer{
+                binding.priceTv.text = it.toString()
+            })
+
+            stock.number.observe(owner, Observer{
+                binding.numberTv.text = it.toString()
+            })
         }
     }
 

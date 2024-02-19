@@ -9,6 +9,11 @@
 
         </variable>
     </data>
+<!--  뷰모델 하나에 대해 프래그먼트 여러 개로 관리 시 변동 사항 체크  -->
+<!--    데이터 셋 추가 > 스크롤 되게 -->
+<!--    메모리 상태 확인 -->
+<!--    리사이클러뷰 조사 (스크롤 이후 상태 값 정상인지 확인) -->
+<!--    viewmodelprovider 하나로 쓰이는지 / 재생산 되는지 (같은 해쉬 값인지)-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

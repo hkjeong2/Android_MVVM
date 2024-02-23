@@ -5,56 +5,43 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.myproject.viewmodel.MainTextViewModel" />
+            type="com.example.myproject.viewmodel.UserVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_firstName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <TextView
-            android:id="@+id/number_tv"
+            android:id="@+id/tv_firstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="100sp"
-            android:text="@{String.valueOf(viewmodel.num)}"
+            android:text="@{viewmodel.userLiveData.firstName.toString()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/get_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:text="숫자 리셋"
-            android:onClick="@{()->viewmodel.clickResetNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <Button
-            android:id="@+id/add_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:text="+"
-            android:onClick="@{()->viewmodel.clickAddNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
+        <TextView
+            android:id="@+id/tv_lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="100sp"
+            android:text="@{viewmodel.userName.toString()}"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/get_bt"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_firstName"/>
 
-        <Button
-            android:id="@+id/minus_bt"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="20dp"
-            android:text="-"
-            android:onClick="@{()->viewmodel.clickMinusNum()}"
-            app:layout_constraintTop_toBottomOf="@id/number_tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/get_bt"/>
 
 
 

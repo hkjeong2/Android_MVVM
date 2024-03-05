@@ -16,6 +16,7 @@ class TestViewModelActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_test_viewmodel)
 
+        setTabLayout()
     }
 
     private fun setTabLayout() {

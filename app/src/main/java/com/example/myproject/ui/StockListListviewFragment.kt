@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.myproject.adapter.StockItemLVAdapter
 import com.example.myproject.databinding.FragmentStockListListviewFragmentBinding
-import com.example.myproject.model.ListView_Item
 import com.example.myproject.model.Repository
 import com.example.myproject.model.StockItem
 

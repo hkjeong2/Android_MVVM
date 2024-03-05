@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myproject.R
@@ -17,7 +18,8 @@ import com.example.myproject.viewmodel.StockItemListViewModel
 class StockListRecyclerviewFragment : Fragment() {
 
     private lateinit var binding : FragmentStockListRecyclerviewBinding
-    private lateinit var stockItemListViewModel : StockItemListViewModel
+//    private lateinit var stockItemListViewModel : StockItemListViewModel
+    private val stockItemListViewModel : StockItemListViewModel by viewModels()
     private lateinit var myAdapter : StockItemRVAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +34,12 @@ class StockListRecyclerviewFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_stock_list_recyclerview, container, false)
 
-        if (!::stockItemListViewModel.isInitialized)
-            stockItemListViewModel = ViewModelProvider(this)[StockItemListViewModel::class.java]
-
+//        if (!::stockItemListViewModel.isInitialized)
+//            stockItemListViewModel = ViewModelProvider(this)[StockItemListViewModel::class.java]
         binding.viewmodel = stockItemListViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        Log.d("test rv", stockItemListViewModel.toString())
 
         myAdapter = StockItemRVAdapter(viewLifecycleOwner, stockItemListViewModel.stockList.value!!)
         binding.stockRv.adapter = myAdapter

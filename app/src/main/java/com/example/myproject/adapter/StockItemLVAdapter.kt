@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.myproject.R
-import com.example.myproject.model.ListView_Item
 import com.example.myproject.model.StockItem
 
 class StockItemLVAdapter(val context : Context, val items : ArrayList<StockItem>) : BaseAdapter() {

@@ -24,6 +24,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.TestListActivity"
+            android:exported="true"/>
+
+        <activity android:name=".ui.TestViewModelActivity"
+            android:exported="true"/>
+
     </application>
 
 

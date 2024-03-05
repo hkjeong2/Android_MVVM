@@ -2,19 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name = "stock"
-            type = "com.example.myproject.viewmodel.StockItemViewModel">
-
-        </variable>
-    </data>
-<!--  뷰모델 하나에 대해 프래그먼트 여러 개로 관리 시 변동 사항 체크  -->
-<!--    데이터 셋 추가 > 스크롤 되게 -->
-<!--    메모리 상태 확인 -->
-<!--    리사이클러뷰 조사 (스크롤 이후 상태 값 정상인지 확인) -->
-<!--    viewmodelprovider 하나로 쓰이는지 / 재생산 되는지 (같은 해쉬 값인지)-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -28,7 +15,7 @@
             android:layout_marginStart="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@{stock.name.toString()}"/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/price_title_tv"
@@ -50,14 +37,13 @@
             app:layout_constraintStart_toEndOf="@id/price_title_tv"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@{String.valueOf(stock.price)}"/>
+            android:text=""/>
 
         <Button
             android:id="@+id/minus_bt"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="-"
-            android:onClick="@{() -> stock.clickMinus()}"
             android:layout_marginEnd="10dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,14 +58,13 @@
             app:layout_constraintEnd_toStartOf="@id/plus_bt"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@{String.valueOf(stock.number)}"/>
+            android:text=""/>
 
         <Button
             android:id="@+id/plus_bt"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:text="+"
-            android:onClick="@{() -> stock.clickPlus()}"
             android:layout_marginEnd="30dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

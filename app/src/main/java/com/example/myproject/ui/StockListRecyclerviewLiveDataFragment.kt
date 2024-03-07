@@ -8,14 +8,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myproject.R
 import com.example.myproject.adapter.StockItemRVAdapter
 import com.example.myproject.databinding.FragmentStockListRecyclerviewBinding
 import com.example.myproject.viewmodel.StockItemListViewModel
 
-class StockListRecyclerviewFragment : Fragment() {
+class StockListRecyclerviewLiveDataFragment : Fragment() {
 
     private lateinit var binding : FragmentStockListRecyclerviewBinding
 //    private lateinit var stockItemListViewModel : StockItemListViewModel

@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.myproject.R
-import com.example.myproject.adapter.StockItemRVAdapter
 import com.example.myproject.databinding.ActivityTestListBinding
-import com.example.myproject.viewmodel.StockItemListViewModel
 import com.google.android.material.tabs.TabLayout
 
 class TestListActivity : AppCompatActivity() {
@@ -34,11 +32,11 @@ class TestListActivity : AppCompatActivity() {
     }
 
     private fun setTabLayout() {
-        val stockListRecyclerviewFragment = StockListRecyclerviewFragment()
-        val stockListListviewFragment = StockListListviewFragment()
+        val stockListRecyclerviewLiveDataFragment = StockListRecyclerviewLiveDataFragment()
+        val stockListListviewLiveDataFragment = StockListListviewLiveDataFragment()
 
         supportFragmentManager.beginTransaction().apply{
-            add(binding.tabLayoutContainer.id, stockListRecyclerviewFragment)
+            add(binding.tabLayoutContainer.id, stockListRecyclerviewLiveDataFragment)
             commit()
         }
 
@@ -46,8 +44,8 @@ class TestListActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val transaction = supportFragmentManager.beginTransaction()
                 when (tab?.position) {
-                    0 -> transaction.replace(binding.tabLayoutContainer.id, stockListRecyclerviewFragment)
-                    1 -> transaction.replace(binding.tabLayoutContainer.id, stockListListviewFragment)
+                    0 -> transaction.replace(binding.tabLayoutContainer.id, stockListRecyclerviewLiveDataFragment)
+                    1 -> transaction.replace(binding.tabLayoutContainer.id, stockListListviewLiveDataFragment)
                 }
                 transaction.commit()
             }

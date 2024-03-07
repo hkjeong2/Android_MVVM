@@ -30,6 +30,9 @@
         <activity android:name=".ui.TestViewModelActivity"
             android:exported="true"/>
 
+        <activity android:name=".ui.StockListRecyclerviewObservableFieldActivity"
+            android:exported="true"/>
+
     </application>
 
 

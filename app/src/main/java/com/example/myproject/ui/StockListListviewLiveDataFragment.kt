@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.myproject.R
 import com.example.myproject.adapter.StockItemLVAdapter
 import com.example.myproject.databinding.FragmentStockListListviewFragmentBinding
 import com.example.myproject.model.Repository
 import com.example.myproject.model.StockItem
 
 
-class StockListListviewFragment : Fragment() {
+class StockListListviewLiveDataFragment : Fragment() {
 
     private lateinit var binding : FragmentStockListListviewFragmentBinding
 
@@ -21,12 +22,11 @@ class StockListListviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentStockListListviewFragmentBinding.inflate(inflater)
-        val listView = binding.stockLv
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_stock_list_listview_fragment, container, false)
 
         val itemList: ArrayList<StockItem> = Repository().loadData()
 
-        listView.adapter = StockItemLVAdapter(requireContext(), itemList)
+        binding.stockLv.adapter = StockItemLVAdapter(requireContext(), itemList)
 
         return binding.root
 

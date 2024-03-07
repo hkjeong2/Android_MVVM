@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="viewmodel"
-            type="com.example.myproject.viewmodel.StockItemListViewModel" />
+            name="stockListVM"
+            type="com.example.myproject.viewmodel.StockItemListOFViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +34,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:listitem="@layout/stockitem_item"/>
+            rv_itemList = "@{stockListVM.stockListField}"
+            tools:listitem="@layout/stockitem_item_observable_field"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

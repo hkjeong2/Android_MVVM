@@ -8,7 +8,7 @@ import com.example.myproject.databinding.StockitemItemObservableFieldBinding
 import com.example.myproject.viewmodel.ViewModel
 import androidx.databinding.library.baseAdapters.BR
 
-class StockItemOFRVAdapter(private val observableViewModels : ObservableArrayList<ViewModel>) : RecyclerView.Adapter<StockItemOFRVAdapter.BaseViewHolder>() {
+class StockItemOFRVAdapter(private val observableViewModels : ObservableArrayList<ViewModel>?) : RecyclerView.Adapter<StockItemOFRVAdapter.BaseViewHolder>() {
 
     class BaseViewHolder(val binding : StockitemItemObservableFieldBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -29,10 +29,10 @@ class StockItemOFRVAdapter(private val observableViewModels : ObservableArrayLis
         return BaseViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = observableViewModels.size
+    override fun getItemCount(): Int = observableViewModels!!.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        holder.bind(observableViewModels[position])
+        holder.bind(observableViewModels!![position])
     }
 
     override fun onViewRecycled(holder: BaseViewHolder) {

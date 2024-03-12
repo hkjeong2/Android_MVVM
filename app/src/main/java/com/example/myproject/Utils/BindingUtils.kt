@@ -8,7 +8,7 @@ import com.example.myproject.viewmodel.ViewModel
 
 fun setAdapter(
     view : RecyclerView,
-    itemList : ObservableArrayList<ViewModel>
+    itemList : ObservableArrayList<ViewModel>?
 ){
     view.adapter = StockItemOFRVAdapter(itemList)
     view.layoutManager = LinearLayoutManager(view.context)

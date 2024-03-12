@@ -9,7 +9,7 @@ import com.example.myproject.viewmodel.ViewModel
 @BindingAdapter(value = ["rv_itemList"])
 fun bindItemList(
     view : RecyclerView,
-    itemList : ObservableArrayList<ViewModel>){
+    itemList : ObservableArrayList<ViewModel>?){
 
     setAdapter(view, itemList)
 }
